@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>오목 타이머</title>
+  </head>
+  <body>
+    <main id="index">
+      <h1>오목</h1>
+      <h1>타이머</h1>
+      <div class="black-input-container">
+        <div class="input-container">
+          <label for="black-default-input" id="black-default-input-label"
+            >흑돌 기본 시간: 5분 0초</label
+          >
+          <input
+            min="0"
+            max="600"
+            step="10"
+            value="300"
+            type="range"
+            id="black-default-input"
+          />
+        </div>
+        <div class="input-container">
+          <label for="black-extra-input" id="black-extra-input-label"
+            >흑돌 추가 시간: 30초</label
+          >
+          <input
+            min="0"
+            max="60"
+            step="1"
+            value="30"
+            type="range"
+            id="black-extra-input"
+          />
+        </div>
+      </div>
+      <div class="white-input-container">
+        <div class="input-container">
+          <label for="white-default-input" id="white-default-input-label"
+            >백돌 기본 시간: 30초</label
+          >
+          <input
+            min="0"
+            max="600"
+            step="10"
+            value="300"
+            type="range"
+            id="white-default-input"
+          />
+        </div>
+        <div class="input-container">
+          <label for="white-extra-input" id="white-extra-input-label"
+            >백돌 추가 시간: 30초</label
+          >
+          <input
+            min="0"
+            max="60"
+            step="1"
+            value="30"
+            type="range"
+            id="white-extra-input"
+          />
+        </div>
+      </div>
+      <a href="timer.html">
+        <button>타이머 시작</button>
+      </a>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>

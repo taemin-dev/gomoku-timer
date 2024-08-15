@@ -1,0 +1,122 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+}
+
+#index {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #2d3436 50%, #ecf0f1 50%);
+  position: relative;
+}
+
+#index h1 {
+  display: inline;
+  position: absolute;
+  font-size: 60px;
+}
+
+#index h1:first-child {
+  right: 51%;
+  color: #ecf0f1;
+}
+
+#index h1:nth-child(2) {
+  left: 51%;
+  color: #2d3436;
+}
+
+#index button {
+  position: absolute;
+  left: 40%;
+  width: 20%;
+  height: 10%;
+  bottom: 15%;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: #2d3436;
+  color: #ecf0f1;
+  border: 2px solid #ecf0f1;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(45, 52, 54, 0.2);
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+}
+
+#index button:hover {
+  transform: scale(1.1);
+}
+
+.input-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  -webkit-appearance: none;
+}
+
+.input-container input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+}
+
+.input-container input::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.black-input-container,
+.white-input-container {
+  width: 50%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  top: 33%;
+  font-size: 30px;
+}
+
+.black-input-container {
+  left: 0;
+  color: #ecf0f1;
+}
+
+.black-input-container input {
+  background-color: #ecf0f1;
+}
+
+.black-input-container input::-webkit-slider-thumb {
+  background-color: #2d3436;
+  border: 2px solid #ecf0f1;
+  box-shadow: 0px 0px 15px 0px rgba(237, 241, 242, 0.2);
+}
+
+.white-input-container {
+  right: 0;
+  color: #2d3436;
+}
+
+.white-input-container input {
+  background-color: #2d3436;
+}
+
+.white-input-container input::-webkit-slider-thumb {
+  background-color: #ecf0f1;
+  border: 2px solid #2d3436;
+  box-shadow: 0px 0px 15px 0px rgba(45, 52, 54, 0.2);
+}
