@@ -63,7 +63,29 @@ setInterval(() => {
 
 const ClickPassTurnBtn = () => {
   if (isGameOver) {
-    location.reload(true);
+    isBlacksTurn = true;
+    passTurnBtn.className = "black-btn";
+    screen.style.backgroundColor = "#2d3436";
+    returnA.style.color = "#ecf0f1";
+    fullscreenBtn.style.color = "#ecf0f1";
+    blackDefaultTimer = localStorage.getItem("blackDefaultTime")
+      ? localStorage.getItem("blackDefaultTime")
+      : 300;
+    blackExtraTimer = localStorage.getItem("blackExtraTime")
+      ? parseInt(localStorage.getItem("blackExtraTime")) + 1
+      : 30 + 1;
+    whiteDefaultTimer = localStorage.getItem("whiteDefaultTime")
+      ? localStorage.getItem("whiteDefaultTime")
+      : 300;
+    whiteExtraTimer = localStorage.getItem("whiteExtraTime")
+      ? parseInt(localStorage.getItem("whiteExtraTime")) + 1
+      : 30 + 1;
+    if (blackDefaultTimer > 1) {
+      passTurnBtn.innerText = `남은 시간: ${formatTime(blackDefaultTimer)}`;
+    } else if (blackExtraTimer > 0) {
+      passTurnBtn.innerText = `🚨추가 시간!: ${formatTime(blackExtraTimer)}`;
+    }
+    isGameOver = false;
   } else {
     isBlacksTurn = !isBlacksTurn;
     if (isBlacksTurn) {
