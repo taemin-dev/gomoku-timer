@@ -180,3 +180,12 @@ input {
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
+#timer #fullscreen-btn {
+  font-size: 24px;
+  color: #ecf0f1;
+  cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 120px;
+}

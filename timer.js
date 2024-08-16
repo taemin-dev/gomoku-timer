@@ -1,6 +1,7 @@
 const screen = document.getElementById("timer");
 const passTurnBtn = document.getElementById("pass-turn-btn");
 const returnA = document.getElementById("return-a");
+const fullscreenBtn = document.getElementById("fullscreen-btn");
 
 let isGameOver = false;
 let isBlacksTurn = true;
@@ -39,6 +40,7 @@ setInterval(() => {
       passTurnBtn.className = "white-btn";
       screen.style.backgroundColor = "#ecf0f1";
       returnA.style.color = "#2d3436";
+      fullscreenBtn.style.color = "#2d3436";
       isGameOver = true;
     }
   } else {
@@ -53,6 +55,7 @@ setInterval(() => {
       passTurnBtn.className = "black-btn";
       screen.style.backgroundColor = "#2d3436";
       returnA.style.color = "#ecf0f1";
+      fullscreenBtn.style.color = "#ecf0f1";
       isGameOver = true;
     }
   }
@@ -67,6 +70,7 @@ const ClickPassTurnBtn = () => {
       passTurnBtn.className = "black-btn";
       screen.style.backgroundColor = "#2d3436";
       returnA.style.color = "#ecf0f1";
+      fullscreenBtn.style.color = "#ecf0f1";
       blackExtraTimer = localStorage.getItem("blackExtraTime")
         ? localStorage.getItem("blackExtraTime")
         : 30;
@@ -79,6 +83,7 @@ const ClickPassTurnBtn = () => {
       passTurnBtn.className = "white-btn";
       screen.style.backgroundColor = "#ecf0f1";
       returnA.style.color = "#2d3436";
+      fullscreenBtn.style.color = "#2d3436";
       whiteExtraTimer = localStorage.getItem("whiteExtraTime")
         ? localStorage.getItem("whiteExtraTime")
         : 30;
@@ -91,5 +96,16 @@ const ClickPassTurnBtn = () => {
   }
 };
 
+const handleFullscreen = () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+    fullscreenBtn.className = "fa-solid fa-expand";
+  } else {
+    screen.requestFullscreen();
+    fullscreenBtn.className = "fa-solid fa-compress";
+  }
+};
+
 passTurnBtn.innerText = `남은 시간: ${formatTime(blackDefaultTimer)}`;
 passTurnBtn.addEventListener("click", ClickPassTurnBtn);
+fullscreenBtn.addEventListener("click", handleFullscreen);
